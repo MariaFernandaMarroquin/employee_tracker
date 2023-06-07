@@ -41,7 +41,6 @@ async function queryFunc(data) {
     });
   } else if (data.choice === "Add Role") {
     const [departmentOptions] = await db.promise().query(`SELECT * FROM departments`); //Pulling the array out of the array
-    console.log(departmentOptions);
     const addRole = [
       {
         type: "input",
@@ -79,7 +78,6 @@ async function queryFunc(data) {
     });
   } else if (data.choice === "Add New Employee") {
     const [rolesOptions] = await db.promise().query(`SELECT * FROM roles`);
-    console.log(rolesOptions);
     const [managersOptions] = await db.promise().query (`SELECT * FROM employees`);
     const addEmployee = [
       {
